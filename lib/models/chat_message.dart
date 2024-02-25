@@ -7,8 +7,6 @@ class ChatMessageModel {
 
   ChatMessageModel({required this.role, required this.parts});
 
-
-
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'role': role,
@@ -19,13 +17,18 @@ class ChatMessageModel {
   factory ChatMessageModel.fromMap(Map<String, dynamic> map) {
     return ChatMessageModel(
       role: map['role'] as String,
-      parts: List<ChatPartModel>.from((map['parts'] as List<int>).map<ChatPartModel>((x) => ChatPartModel.fromMap(x as Map<String,dynamic>),),),
+      parts: List<ChatPartModel>.from(
+        (map['parts'] as List<int>).map<ChatPartModel>(
+          (x) => ChatPartModel.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory ChatMessageModel.fromJson(String source) => ChatMessageModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory ChatMessageModel.fromJson(String source) =>
+      ChatMessageModel.fromMap(json.decode(source) as Map<String, dynamic>);
 }
 
 class ChatPartModel {
@@ -48,5 +51,6 @@ class ChatPartModel {
 
   String toJson() => json.encode(toMap());
 
-  factory ChatPartModel.fromJson(String source) => ChatPartModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory ChatPartModel.fromJson(String source) =>
+      ChatPartModel.fromMap(json.decode(source) as Map<String, dynamic>);
 }
