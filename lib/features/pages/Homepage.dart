@@ -57,9 +57,9 @@
 //                   child: ListView.builder(
 //                     itemCount: messages.length,
 //                     itemBuilder: (context, index){
-                      
+
 //                   return Container(
-                    
+
 //                     margin: EdgeInsets.only(top: 10),
 //                     padding: EdgeInsets.all(8),
 //                     decoration: BoxDecoration(
@@ -143,24 +143,15 @@
 //             ),
 //           );
 
-
-
-            
-//             default: 
+//             default:
 //             return CircularProgressIndicator();
 //           }
-         
-
 
 //         },
 //       ),
 //     );
 //   }
 // }
-
-
-
-
 
 import 'package:chat_bot/bloc/chat_bloc_bloc.dart';
 import 'package:chat_bot/models/chat_message.dart';
@@ -221,13 +212,10 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Expanded(
-                      
                       child: ListView.builder(
-
                           itemCount: messages.length,
                           itemBuilder: (context, index) {
                             return Align(
-
                               alignment: messages[index].role == "user"
                                   ? Alignment.centerRight
                                   : Alignment.centerLeft,
@@ -242,7 +230,8 @@ class _HomePageState extends State<HomePage> {
                                         .withOpacity(0.5),
                                   ),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         messages[index].role == "user"
@@ -273,28 +262,29 @@ class _HomePageState extends State<HomePage> {
                             );
                           }),
                     ),
-                    if (chatBlocBloc.generating) Lottie.asset('assets/Loader.json'),
+                    if (chatBlocBloc.generating)
+                      Lottie.asset('assets/Loader.json'),
                     Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 12, vertical: 12,),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 12,
+                      ),
                       child: Row(
                         children: [
                           Expanded(
                             child: TextField(
                               controller: textEditingController,
-                              
                               style: TextStyle(color: Colors.black),
                               cursorColor: Colors.deepOrange,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(20),
-                                  borderSide:
-                                      BorderSide(color: Colors.black12),
+                                  borderSide: BorderSide(color: Colors.black12),
                                 ),
                                 fillColor: Colors.white,
                                 hintText: "Ask Something from AI",
-                                hintStyle: TextStyle(
-                                    color: Colors.grey.shade400),
+                                hintStyle:
+                                    TextStyle(color: Colors.grey.shade400),
                                 filled: true,
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(12),
