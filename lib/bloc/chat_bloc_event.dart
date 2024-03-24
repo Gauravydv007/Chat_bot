@@ -7,7 +7,9 @@ sealed class ChatBlocEvent {}
 
 class ChatGenerateNewTextMessageEvent extends ChatBlocEvent {
   final String inputMessage;
-  ChatGenerateNewTextMessageEvent({
-    required this.inputMessage,
+  final File? imageFile;
+  final String base64Image;
+  ChatGenerateNewTextMessageEvent( {
+    required this.inputMessage, required this.imageFile, required this.base64Image,
   });
 }
