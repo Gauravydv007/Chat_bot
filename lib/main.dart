@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.grey.shade800,
           primaryColor: Colors.deepPurple.shade300,
         ),
-        home: const HomePage());
+        home: const HomePage(),
+        );
   }
 }

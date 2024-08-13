@@ -11,5 +11,7 @@ class ChatGenerateNewTextMessageEvent extends ChatBlocEvent {
   final String base64Image;
   ChatGenerateNewTextMessageEvent( {
     required this.inputMessage, required this.imageFile, required this.base64Image,
+
+    
   });
 }

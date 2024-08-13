@@ -12,3 +12,5 @@ class ChatSuccessState extends ChatBlocState {
     required this.messages,
   });
 }
+
+
